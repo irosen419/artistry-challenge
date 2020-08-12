@@ -1,0 +1,9 @@
+<h1>New Purchase Order</h1>
+<%=form_for(@purchase) do |purchase_builder|%>
+    <h2>Artist:</h2><br>
+    <%=purchase_builder.collection_select :artist_id, Artist.all, :id, :name%><br>
+    <h2>Instrument:</h2><br>
+    <%=purchase_builder.collection_select :instrument_id, Instrument.all, :id, :name%><br>
+ 
+    <%=purchase_builder.submit "Place Order Here"%>
+<%end%>

@@ -1,0 +1,21 @@
+<h1>New Artist Form</h1>
+<h2>Add yourself to our database here!</h2>
+
+<%if flash[:my_errors]%>
+    <%flash[:my_errors].each do |error|%>
+        <%=error%>
+    <%end%>
+<%end%>
+
+<%=form_for(@artist) do |artist_builder|%>
+    <%=artist_builder.label :name%><br>
+    <%=artist_builder.text_field :name%><br>
+
+    <%=artist_builder.label :title%><br>
+    <%=artist_builder.text_field :title%><br>
+
+    <%=artist_builder.label :age%><br>
+    <%=artist_builder.number_field :age%><br>
+
+    <%=artist_builder.submit "Submit"%>
+<%end%>
